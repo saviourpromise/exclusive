@@ -2,32 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+.custom-link {
+  @apply relative no-underline tracking-wide;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  &::after {
+    content: "";
+    @apply absolute bg-[#EAEAEA];
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: 3px;
+    transition: width 0.3s;
+  }
+
+  &:hover {
+    @apply text-[#EAEAEA];
+  }
+
+  &:hover::after {
+    width: 100%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.mac:hover{
+  background: #DB4444;
+  transition: 0.6s ease-in-out;
+  fill: white;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.abs{
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.pee{
+  font-family: Helvetica;
+}
+
+.mac:hover .svg path{
+  stroke: white;
+}
+
+.mac:hover .pop{
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.jbl:hover{
+  transform: rotateZ(360deg);
+  transition: 1s ease-in-out;
+  cursor: pointer;
+}
+
+.sea{
+  background-image: url(./Images/blurBg.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.add{
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.sam:hover .add{
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.pop{
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  backdrop-filter: blur(100px);
+}
+
+.mack:hover{
+  cursor: pointer;
+  transform: rotate(360deg);
+  transition: 1s ease-in-out;
 }
