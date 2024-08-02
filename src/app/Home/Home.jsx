@@ -136,7 +136,7 @@ const Home = () => {
             <a href="">
               <Image
                 src={search}
-                className="absolute top-[9px] left-[12.7rem] w-4"
+                className="absolute top-[9px] left-[12.7rem] w-4 hidden"
               />
             </a>
           </div>
