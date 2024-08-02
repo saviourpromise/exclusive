@@ -2,14 +2,14 @@
 import { useState, useEffect } from "react";
 import Header from "../Components/Header/Header";
 import Image from "next/image";
-import search from "@/app/Images/search.png";
+import search from "@/app/Images/Search.png";
 import love from "@/app/Images/love.png";
 import cart from "@/app/Images/cart.png";
 import right_arrow from "@/app/Images/right-arrow.png";
 import apple from "@/app/Images/1200px-Apple_gray_logo 1.png";
 import arrow from "@/app/Images/arrow.png";
 import iphone from "@/app/Images/hero_endframe__cvklg0xk3w6e_large 2.png";
-import left from "@/app/Images/Fill with Left Arrow.png";
+import left from "@/app/Images/Fill With Left Arrow.png";
 import right from "@/app/Images/Fill with Right Arrow.png";
 import game from "@/app/Images/game-padder.svg";
 import eye from "@/app/Images/Fill Eye.png";
