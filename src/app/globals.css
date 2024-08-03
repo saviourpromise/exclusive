@@ -30,6 +30,17 @@
   fill: white;
 }
 
+.pss{
+  transform: scale(1);
+  transition: 0.5s ease-in-out;
+}
+
+.pss:hover{
+  transform: scale(0.9);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
 .abs{
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
@@ -49,10 +60,16 @@
   transition: 0.5s ease-in-out;
 }
 
-.jbl:hover{
-  transform: rotateZ(360deg);
-  transition: 1s ease-in-out;
+.jbl{
   cursor: pointer;
+  transform: scale(1);
+  transition: 0.5s ease-in-out;
+}
+
+.jbl:hover{
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: 0.5s ease-in-out;
 }
 
 .sea{
@@ -80,8 +97,13 @@
   backdrop-filter: blur(100px);
 }
 
+.mack{
+  transform: scale(1);
+  transition: 0.5s ease-in-out;
+}
+
 .mack:hover{
   cursor: pointer;
-  transform: rotate(360deg);
-  transition: 1s ease-in-out;
+  transform: scale(0.9);
+  transition: 0.5s ease-in-out;
 }

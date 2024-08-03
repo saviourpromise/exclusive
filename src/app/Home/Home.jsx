@@ -38,6 +38,8 @@ import cream from "@/app/Images/cream.svg";
 import shoe from "@/app/Images/shoe.svg";
 import jacket from "@/app/Images/jacket.svg";
 import padd from "@/app/Images/pad.svg";
+import benz from "@/app/Images/benz.svg";
+import ps5 from "@/app/Images/ps5.svg";
 
 const Home = () => {
   const [carts, setCarts] = useState(0);
@@ -811,7 +813,7 @@ const Home = () => {
           </p>
 
           <div className="flex gap-4">
-            <div className="flex flex-col-reverse justify-center items-center bg-white rounded-full w-14 h-14">
+            <div className="flex flex-col-reverse justify-center items-center bg-white rounded-full w-12 h-12">
               <p className="text-[10px] leading-4 font-bold">DAYS</p>
               <span id="days" className="font-bold">
                 {time.days}
@@ -832,7 +834,7 @@ const Home = () => {
               </span>
             </div>
 
-            <div className="flex flex-col-reverse justify-center items-center bg-white rounded-full w-[3.7rem] h-[3.7rem]">
+            <div className="flex flex-col-reverse justify-center items-center bg-white rounded-full w-[4rem] h-[4rem]">
               <p className="text-[10px] leading-4 font-bold">SECONDS</p>
               <span id="hrs" className="font-bold">
                 {time.seconds}
@@ -998,11 +1000,14 @@ const Home = () => {
       <div className="mt-10 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={dog} className="pt-6 w-[74%] mb-5 mack ml-8" />
+            <Image src={benz} className="pt-6 w-[69%] mb-5 mack ml-8" id="benz"/>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 ml-4">
               <Image src={heart} className="cursor-pointer w-5" />
-              <Image src={eye} className="cursor-pointer w-5" />
+              <Image src={eye} className="cursor-pointer w-5" onClick={() => {
+                let benz = document.getElementById("benz");
+                benz.style.visibility = "hidden";
+              }}/>
             </div>
             <button
               className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
@@ -1123,6 +1128,36 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="flex items-center justify-center py-10 mb-10">
+        <button className="bg-[#DB4444] text-white py-2 px-8 text-sm rounded-[4px] text-center">
+          View All Products
+        </button>
+      </div>
+
+      <div className="flex flex-col mx-32 gap-4">
+        <p className="text-[#DB4444] rounded-md text-base font-semibold border-l-[12px] pl-3 mt-20 py-1 mb-4 border-l-[#DB4444]">
+          Featured
+        </p>
+
+        <div className="flex justify-between -mt-6">
+          <p className="text-3xl font-semibold mt-1">New Arrival</p>
+
+          <div className="gap-2 hidden">
+            <Image src={left} className="cursor-pointer" />
+            <Image src={right} className="cursor-pointer" />
+          </div>
+        </div>
+      </div>
+      
+      <div className="flex bg-black">
+      <div className="flex flex-col gap-2">
+      <p className="text-2xl font-semibold text-white">PlayStation 5</p>
+      <p className="text-sm font-normal text-white">Black and White version of the PS5 <br /> coming out on sale.</p>
+      <a href="" className="text-base font-medium text-white border-b-2 pb-[2px]">Shop Now</a>
+      </div>
+      <Image src={ps5} className="pss"/>
       </div>
     </div>
   );
