@@ -24,10 +24,44 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .mac:hover{
   background: #DB4444;
   transition: 0.6s ease-in-out;
   fill: white;
+}
+
+.index{
+  position: absolute;
+  top: 45%;
+  left: 6%;
+  transition: 0.5s ease-in-out;
+}
+
+.dash:hover .index{
+  position: absolute;
+  top: 5%;
+  left: 6%;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.way:hover .indexes{
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.indexes{
+  position: absolute;
+  top: 60%;
+  left: 8%;
+  transition: 0.5s ease-in-out;
 }
 
 .pss{
@@ -39,6 +73,21 @@
   transform: scale(0.9);
   transition: 0.5s ease-in-out;
   cursor: pointer;
+}
+
+.shas{
+  position: absolute;
+  top: 74%;
+  left: 6%;
+  transition: 0.5s ease-in-out;
+}
+
+.owe:hover .shas{
+  position: absolute;
+  top: 40%;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
 }
 
 .abs{

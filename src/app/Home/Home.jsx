@@ -40,9 +40,25 @@ import jacket from "@/app/Images/jacket.svg";
 import padd from "@/app/Images/pad.svg";
 import benz from "@/app/Images/benz.svg";
 import ps5 from "@/app/Images/ps5.svg";
+import woman from "@/app/Images/woman.svg";
+import mp3 from "@/app/Images/mp3.svg";
+import perfume from "@/app/Images/perfume.svg";
+import top from "@/app/Images/top.svg";
+import free from "@/app/Images/free.svg"
+import fast from "@/app/Images/247.svg";
+import verify from "@/app/Images/verify.svg"
 
 const Home = () => {
-  const [carts, setCarts] = useState(0);
+  const rateForFreeDelivery = "$140";
+  const daysOfGuarantee = "30";
+  const [carts, setCarts] = useState(() => {
+    const savedCarts = localStorage.getItem('carts');
+    return savedCarts !== null ? JSON.parse(savedCarts) : 0;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('carts', JSON.stringify(carts));
+  }, [carts]);
   const changePhone = () => {
     let phone = document.getElementById("phone");
     phone.style.color = "white";
@@ -83,6 +99,18 @@ const Home = () => {
     gaming.style.background = "#DB4444";
     gaming.style.border = "none";
   };
+
+  const addToCart = () => {
+    setCarts(carts + 1);
+    window.alert(`Added`);
+    let but = document.getElementById("but");
+    if (but.innerHTML = "Add to cart") {
+      but.innerHTML = "Added";
+      but.style.paddingRight = "106px";
+      but.style.paddingLeft = "106px";
+    }
+  };
+
   const [time, setTime] = useState({
     days: "00",
     hours: "00",
@@ -107,7 +135,7 @@ const Home = () => {
     return () => clearInterval(intervalId);
   }, []);
   return (
-    <div className="">
+    <div id="home">
       <Header />
 
       <section className="flex px-32 justify-between pt-8 border-b-[1px] bg-white pb-3">
@@ -412,8 +440,8 @@ const Home = () => {
         </div>
 
         <div className="flex gap-2">
-          <Image src={left} className="cursor-pointer" />
-          <Image src={right} className="cursor-pointer" />
+          <Image src={left} priority className="cursor-pointer" />
+          <Image src={right} priority className="cursor-pointer" />
         </div>
       </div>
 
@@ -425,7 +453,7 @@ const Home = () => {
                 -40%
               </p>
             </div>
-            <Image src={game} className="pt-6 -ml-8 w-[80%] mack" />
+            <Image src={game} priority className="pt-6 -ml-8 w-[80%] mack" />
 
             <div className="flex flex-col gap-2">
               <Image src={heart} className="cursor-pointer" />
@@ -434,9 +462,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[13rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -472,9 +500,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[13rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -510,9 +538,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[13rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -548,9 +576,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[13rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -586,8 +614,8 @@ const Home = () => {
           <p className="text-3xl font-semibold mt-3">Browse By Category</p>
 
           <div className="flex gap-2">
-            <Image src={left} className="cursor-pointer" />
-            <Image src={right} className="cursor-pointer" />
+            <Image src={left} priority className="cursor-pointer" />
+            <Image src={right} priority className="cursor-pointer" />
           </div>
         </div>
 
@@ -684,9 +712,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -717,9 +745,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -750,9 +778,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -783,9 +811,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -861,8 +889,8 @@ const Home = () => {
           <p className="text-3xl font-semibold mt-3">Explore Our Products</p>
 
           <div className="flex gap-2">
-            <Image src={left} className="cursor-pointer" />
-            <Image src={right} className="cursor-pointer" />
+            <Image src={left} priority className="cursor-pointer" />
+            <Image src={right} priority className="cursor-pointer" />
           </div>
         </div>
       </div>
@@ -879,9 +907,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -890,12 +918,12 @@ const Home = () => {
             <p className="font-bold">Breed Dry Dog Food</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$100</p>
-            <div className="flex gap-2">
-              <div>
-                <Image src={five_star} className="mt-[2px]"/>
+              <div className="flex gap-2">
+                <div>
+                  <Image src={five_star} className="mt-[2px]" />
+                </div>
+                <p className="text-gray-400 font-semibold">(35)</p>
               </div>
-              <p className="text-gray-400 font-semibold">(35)</p>
-            </div>
             </div>
           </div>
         </div>
@@ -911,9 +939,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -922,12 +950,12 @@ const Home = () => {
             <p className="font-bold">CANON EOS DSLR Camera</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$360</p>
-            <div className="flex gap-2">
-              <div>
-                <Image src={five_star} className="mt-[2px]"/>
+              <div className="flex gap-2">
+                <div>
+                  <Image src={five_star} className="mt-[2px]" />
+                </div>
+                <p className="text-gray-400 font-semibold">(95)</p>
               </div>
-              <p className="text-gray-400 font-semibold">(95)</p>
-            </div>
             </div>
           </div>
         </div>
@@ -943,9 +971,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -954,12 +982,12 @@ const Home = () => {
             <p className="font-bold">ASUS FHD Gaming Laptop</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$700</p>
-            <div className="flex gap-2">
-              <div>
-                <Image src={five_star} className="mt-[2px]"/>
+              <div className="flex gap-2">
+                <div>
+                  <Image src={five_star} className="mt-[2px]" />
+                </div>
+                <p className="text-gray-400 font-semibold">(325)</p>
               </div>
-              <p className="text-gray-400 font-semibold">(325)</p>
-            </div>
             </div>
           </div>
         </div>
@@ -975,9 +1003,9 @@ const Home = () => {
             <button
               className="absolute text-white abs font-medium bg-black top-[13.3rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -986,12 +1014,12 @@ const Home = () => {
             <p className="font-bold">Curology Product Set</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$500</p>
-            <div className="flex gap-2">
-              <div>
-                <Image src={five_star} className="mt-[2px]"/>
+              <div className="flex gap-2">
+                <div>
+                  <Image src={five_star} className="mt-[2px]" />
+                </div>
+                <p className="text-gray-400 font-semibold">(145)</p>
               </div>
-              <p className="text-gray-400 font-semibold">(145)</p>
-            </div>
             </div>
           </div>
         </div>
@@ -1000,21 +1028,29 @@ const Home = () => {
       <div className="mt-10 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={benz} className="pt-6 w-[69%] mb-5 mack ml-8" id="benz"/>
+            <Image
+              src={benz}
+              className="pt-6 w-[69%] mb-5 mack ml-8"
+              id="benz"
+            />
 
             <div className="flex flex-col gap-2 ml-4">
               <Image src={heart} className="cursor-pointer w-5" />
-              <Image src={eye} className="cursor-pointer w-5" onClick={() => {
-                let benz = document.getElementById("benz");
-                benz.style.visibility = "hidden";
-              }}/>
+              <Image
+                src={eye}
+                className="cursor-pointer w-5"
+                onClick={() => {
+                  let benz = document.getElementById("benz");
+                  benz.style.visibility = "hidden";
+                }}
+              />
             </div>
             <button
               className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -1023,12 +1059,12 @@ const Home = () => {
             <p className="font-bold">Kids Electric Car</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$960</p>
-            <div className="flex gap-2">
-              <div>
-                <Image src={five_star} className="mt-[2px]"/>
+              <div className="flex gap-2">
+                <div>
+                  <Image src={five_star} className="mt-[2px]" />
+                </div>
+                <p className="text-gray-400 font-semibold">(65)</p>
               </div>
-              <p className="text-gray-400 font-semibold">(65)</p>
-            </div>
             </div>
           </div>
         </div>
@@ -1044,9 +1080,9 @@ const Home = () => {
             <button
               className="absolute text-white font-medium abs bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -1055,12 +1091,12 @@ const Home = () => {
             <p className="font-bold">Jr. Zoom Soccer Cleats</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$1160</p>
-            <div className="flex gap-2">
-              <div>
-                <Image src={five_star} className="mt-[2px]"/>
+              <div className="flex gap-2">
+                <div>
+                  <Image src={five_star} className="mt-[2px]" />
+                </div>
+                <p className="text-gray-400 font-semibold">(35)</p>
               </div>
-              <p className="text-gray-400 font-semibold">(35)</p>
-            </div>
             </div>
           </div>
         </div>
@@ -1076,9 +1112,9 @@ const Home = () => {
             <button
               className="absolute text-white font-medium abs bg-black top-[12.6rem] abs left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -1087,12 +1123,12 @@ const Home = () => {
             <p className="font-bold">GP11 Shooter USB Gamepad</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$660</p>
-            <div className="flex gap-2">
-              <div>
-                <Image src={half_star} className="mt-[2px]"/>
+              <div className="flex gap-2">
+                <div>
+                  <Image src={half_star} className="mt-[2px]" />
+                </div>
+                <p className="text-gray-400 font-semibold">(55)</p>
               </div>
-              <p className="text-gray-400 font-semibold">(55)</p>
-            </div>
             </div>
           </div>
         </div>
@@ -1108,9 +1144,9 @@ const Home = () => {
             <button
               className="absolute text-white font-medium bg-black top-[12.5rem] abs left-[1px] px-[89px] py-3 add"
               onClick={() => {
-                setCarts(carts + 1);
-                window.alert(`Added`);
+                addToCart();
               }}
+              id="but"
             >
               Add to cart
             </button>
@@ -1119,12 +1155,12 @@ const Home = () => {
             <p className="font-bold">Quilted Satin Jacket</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$660</p>
-            <div className="flex gap-2">
-              <div>
-                <Image src={half_star} className="mt-[2px]"/>
+              <div className="flex gap-2">
+                <div>
+                  <Image src={half_star} className="mt-[2px]" />
+                </div>
+                <p className="text-gray-400 font-semibold">(55)</p>
               </div>
-              <p className="text-gray-400 font-semibold">(55)</p>
-            </div>
             </div>
           </div>
         </div>
@@ -1145,20 +1181,99 @@ const Home = () => {
           <p className="text-3xl font-semibold mt-1">New Arrival</p>
 
           <div className="gap-2 hidden">
-            <Image src={left} className="cursor-pointer" />
-            <Image src={right} className="cursor-pointer" />
+            <Image src={left} priority className="cursor-pointer" />
+            <Image src={right} priority className="cursor-pointer" />
           </div>
         </div>
       </div>
-      
-      <div className="flex bg-black">
-      <div className="flex flex-col gap-2">
-      <p className="text-2xl font-semibold text-white">PlayStation 5</p>
-      <p className="text-sm font-normal text-white">Black and White version of the PS5 <br /> coming out on sale.</p>
-      <a href="" className="text-base font-medium text-white border-b-2 pb-[2px]">Shop Now</a>
+
+      <div className="flex justify-between mx-32 mt-20 mb-20">
+      <div className="bg-[#0D0D0D] relative owe px-6 pt-20 rounded-md">
+        <div className="flex flex-col gap-3 shas z-[1]">
+          <p className="text-2xl font-semibold text-white">PlayStation 5</p>
+          <p className="text-sm font-medium text-white">
+            Black and White version of the PS5 <br /> coming out on sale.
+          </p>
+          <p
+            className="text-base font-medium text-white"
+          >
+            <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
+          </p>
+        </div>
+        <Image src={ps5} className="pss" />
       </div>
-      <Image src={ps5} className="pss"/>
+
+      <div className="flex flex-col gap-5">
+      <div className="bg-[#0D0D0D] relative pl-20 pr-1 dash rounded-md">
+      <Image src={woman} className="pss"/> 
+      <div className="flex flex-col gap-3 z-[1] index">
+          <p className="text-2xl font-semibold text-white">Women’s Collections</p>
+          <p className="text-sm font-medium text-white">
+          Featured woman collections that <br /> give you another vibe.
+          </p>
+          <p
+            className="text-base font-medium text-white"
+          >
+            <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
+          </p>
+        </div>
+        </div>
+        <div className="flex gap-6">
+        <div className="bg-[#0D0D0D] relative rounded-md way p-[25px] pt-[42px]">
+        <Image src={mp3} className="pss"/>
+        <div className="flex flex-col gap-2 z-[1] indexes">
+          <p className="text-2xl font-semibold text-white">Speakers</p>
+          <p className="text-sm font-medium text-white">
+          Amazon wireless speakers
+          </p>
+          <p
+            className="text-base font-medium text-white"
+          >
+            <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
+          </p>
+        </div>
+        </div>
+        <div className="bg-[#0D0D0D] relative way rounded-md p-[25px] pt-[42px]">
+        <Image src={perfume} className="pss"/>
+        <div className="flex flex-col gap-2 z-[1] indexes">
+          <p className="text-2xl font-semibold text-white">Perfume</p>
+          <p className="text-sm font-normal text-white">
+          GUCCI INTENSE OUD EDP
+          </p>
+          <p
+            className="text-base font-medium text-white"
+          >
+            <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
+          </p>
+        </div>
+        </div>
+        </div>
+        </div>
       </div>
+
+      <div className="flex mx-60 justify-between my-10">
+      <div className="flex flex-col gap-2 items-center justify-center">
+      <Image src={free} className="mb-4"/>
+      <p className="text-xl font-semibold">FREE AND FAST DELIVERY</p>
+      <p className="text-sm font-medium">Free delivery for all orders over {rateForFreeDelivery}</p>
+      </div>
+
+      <div className="flex flex-col gap-2 items-center justify-center">
+      <Image src={fast} className="mb-4"/>
+      <p className="text-xl font-semibold">24/7 CUSTOMER SERVICE</p>
+      <p className="text-sm font-medium">Friendly 24/7 customer support</p>
+      </div>
+
+      <div className="flex flex-col gap-2 items-center justify-center">
+      <Image src={verify} className="mb-4"/>
+      <p className="text-xl font-semibold">MONEY BACK GUARANTEE</p>
+      <p className="text-sm font-medium">We return money within {daysOfGuarantee} days</p>
+      </div>
+      </div>
+
+      <a href="#home" className="flex mx-20 items-end justify-end">
+      <Image src={top}/>
+      </a>
     </div>
   );
 };
