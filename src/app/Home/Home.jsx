@@ -4,7 +4,8 @@ import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer/Footer";
 import Image from "next/image";
 import { image } from "../Components/Image";
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const Home = () => {
   const rateForFreeDelivery = "$140";
@@ -156,6 +157,7 @@ const Home = () => {
   }, []);
   return (
     <div id="home">
+    <ToastContainer />
       <Header />
 
       <section className="flex px-32 justify-between pt-8 border-b-[1px] bg-white pb-3">
