@@ -28,6 +28,10 @@ html{
   scroll-behavior: smooth;
 }
 
+body{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .mac:hover{
   background: #DB4444;
   transition: 0.6s ease-in-out;

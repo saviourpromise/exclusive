@@ -1,64 +1,90 @@
 "use client";
 import { useState, useEffect } from "react";
 import Header from "../Components/Header/Header";
+import Footer from "../Components/Footer/Footer";
 import Image from "next/image";
-import search from "@/app/Images/Search.png";
-import love from "@/app/Images/love.png";
-import cart from "@/app/Images/cart.png";
-import right_arrow from "@/app/Images/right-arrow.png";
-import apple from "@/app/Images/1200px-Apple_gray_logo 1.png";
-import arrow from "@/app/Images/arrow.png";
-import iphone from "@/app/Images/hero_endframe__cvklg0xk3w6e_large 2.png";
-import left from "@/app/Images/Fill With Left Arrow.png";
-import right from "@/app/Images/Fill with Right Arrow.png";
-import game from "@/app/Images/game-padder.svg";
-import eye from "@/app/Images/Fill Eye.png";
-import heart from "@/app/Images/Fill Heart.png";
-import pad from "@/app/Images/track-padder.svg";
-import smartTv from "@/app/Images/smartT.svg";
-import chair from "@/app/Images/chairr.svg";
-import five_star from "@/app/Images/Five star.png";
-import four_star from "@/app/Images/Four Star.png";
-import half_star from "@/app/Images/Four Half Star.png";
-import phone from "@/app/Images/Category-CellPhone.svg";
-import computer from "@/app/Images/Category-Computer.svg";
-import smartwatch from "@/app/Images/Category-SmartWatch.svg";
-import camera from "@/app/Images/Category-Camera.svg";
-import headphone from "@/app/Images/Category-Headphone.svg";
-import gaming from "@/app/Images/Category-Gamepad.svg";
-import cloth from "@/app/Images/cloth.svg";
-import gucci from "@/app/Images/gucci.svg";
-import speak from "@/app/Images/speak.svg";
-import jbl from "@/app/Images/JBL.svg";
-import bookshelf from "@/app/Images/bookshelf.svg";
-import dog from "@/app/Images/dog-food.svg";
-import snap from "@/app/Images/snap.svg";
-import laptop from "@/app/Images/laptop.svg";
-import cream from "@/app/Images/cream.svg";
-import shoe from "@/app/Images/shoe.svg";
-import jacket from "@/app/Images/jacket.svg";
-import padd from "@/app/Images/pad.svg";
-import benz from "@/app/Images/benz.svg";
-import ps5 from "@/app/Images/ps5.svg";
-import woman from "@/app/Images/woman.svg";
-import mp3 from "@/app/Images/mp3.svg";
-import perfume from "@/app/Images/perfume.svg";
-import top from "@/app/Images/top.svg";
-import free from "@/app/Images/free.svg"
-import fast from "@/app/Images/247.svg";
-import verify from "@/app/Images/verify.svg"
+import { image } from "../Components/Image";
+import { toast } from 'react-toastify';
 
 const Home = () => {
   const rateForFreeDelivery = "$140";
   const daysOfGuarantee = "30";
-  const [carts, setCarts] = useState(() => {
-    const savedCarts = localStorage.getItem('carts');
-    return savedCarts !== null ? JSON.parse(savedCarts) : 0;
-  });
+  const [carts, setCarts] = useState(0);
+  // const [carts, setCarts] = useState(() => {
+  //   const savedCarts = localStorage.getItem('carts');
+  //   return savedCarts !== null ? JSON.parse(savedCarts) : 0;
+  // });
 
-  useEffect(() => {
-    localStorage.setItem('carts', JSON.stringify(carts));
-  }, [carts]);
+  // useEffect(() => {
+  //   localStorage.setItem('carts', JSON.stringify(carts));
+  // }, [carts]);
+
+  const notify = () => toast.success("ADDED!");
+
+  const shape = () => {
+    let svo = document.getElementById("svo");
+    svo.style.borderWidth = "2px";
+    svo.style.borderColor = "black";
+    svo.style.borderRadius = "9999px";
+    svo.style.padding = "2px";
+  }
+
+  const shapee = () => {
+    let svoo = document.getElementById("svoo");
+    svoo.style.borderWidth = "2px";
+    svoo.style.borderColor = "black";
+    svoo.style.borderRadius = "9999px";
+    svoo.style.padding = "2px";
+  }
+
+  const shapeee = () => {
+    let svooo = document.getElementById("svooo");
+    svooo.style.borderWidth = "2px";
+    svooo.style.borderColor = "black";
+    svooo.style.borderRadius = "9999px";
+    svooo.style.padding = "2px";
+  }
+
+  const shapeeee = () => {
+    let svoooo = document.getElementById("svoooo");
+    svoooo.style.borderWidth = "2px";
+    svoooo.style.borderColor = "black";
+    svoooo.style.borderRadius = "9999px";
+    svoooo.style.padding = "2px";
+  }
+
+  const border = () => {
+    let svg = document.getElementById("svg");
+    svg.style.borderWidth = "2px";
+    svg.style.borderColor = "black";
+    svg.style.borderRadius = "9999px";
+    svg.style.padding = "2px";
+  }
+
+  const borderr = () => {
+    let svgg = document.getElementById("svgg");
+    svgg.style.borderWidth = "2px";
+    svgg.style.borderColor = "black";
+    svgg.style.borderRadius = "9999px";
+    svgg.style.padding = "2px";
+  }
+
+  const borderrr = () => {
+    let svggg = document.getElementById("svggg");
+    svggg.style.borderWidth = "2px";
+    svggg.style.borderColor = "black";
+    svggg.style.borderRadius = "9999px";
+    svggg.style.padding = "2px";
+  }
+
+  const borderrrr = () => {
+    let svgggg = document.getElementById("svgggg");
+    svgggg.style.borderWidth = "2px";
+    svgggg.style.borderColor = "black";
+    svgggg.style.borderRadius = "9999px";
+    svgggg.style.padding = "2px";
+  }
+
   const changePhone = () => {
     let phone = document.getElementById("phone");
     phone.style.color = "white";
@@ -102,13 +128,7 @@ const Home = () => {
 
   const addToCart = () => {
     setCarts(carts + 1);
-    window.alert(`Added`);
-    let but = document.getElementById("but");
-    if (but.innerHTML = "Add to cart") {
-      but.innerHTML = "Added";
-      but.style.paddingRight = "106px";
-      but.style.paddingLeft = "106px";
-    }
+    notify();
   };
 
   const [time, setTime] = useState({
@@ -165,22 +185,21 @@ const Home = () => {
             />
             <a href="">
               <Image
-                src={search}
+                src={image.search}
                 className="absolute top-[9px] left-[12.7rem] w-4"
               />
             </a>
           </div>
           <a href="">
-            <Image src={love} className="mt-[7px]" />
+            <Image src={image.love} className="mt-[7px]" />
           </a>
           <a href="" className="relative">
             <div className="flex items-center h-5 w-5 justify-center rounded-full absolute font-bold left-5 -top-2 text-white p-1 bg-[#DB4444]">
               <p>{carts}</p>
             </div>
-            <Image src={cart} />
+            <Image src={image.cart} />
           </a>
-          <a
-            href=""
+          <div
             className="bg-white mac rounded-full relative p-[2px] -mt-1"
           >
             <svg
@@ -206,8 +225,8 @@ const Home = () => {
                 stroke-linejoin="round"
               />
             </svg>
-            <div className="flex absolute -left-[170px] top-9 pop flex-col gap-2 rounded-md p-4">
-              <div className="flex gap-4">
+            <div className="flex absolute -left-[165.4px] top-9 pop flex-col gap-2 rounded-md p-4">
+              <a href="" className="flex gap-4">
                 <svg
                   width="32"
                   height="32"
@@ -233,9 +252,9 @@ const Home = () => {
                 <p className="text-[#FAFAFA] font-normal text-sm mt-[6px]">
                   Manage my account
                 </p>
-              </div>
+              </a>
 
-              <div className="flex gap-5 pl-1">
+              <a href="" className="flex gap-5 pl-1">
                 <svg
                   width="24"
                   height="24"
@@ -260,9 +279,9 @@ const Home = () => {
                 <p className="text-[#FAFAFA] font-normal text-sm mt-[6px]">
                   My Order
                 </p>
-              </div>
+              </a>
 
-              <div className="flex gap-5 pl-1">
+              <a href="" className="flex gap-5 pl-1">
                 <svg
                   width="24"
                   height="24"
@@ -295,9 +314,9 @@ const Home = () => {
                 <p className="text-[#FAFAFA] font-normal text-sm mt-[6px]">
                   My Cancellations
                 </p>
-              </div>
+              </a>
 
-              <div className="flex gap-5 pl-1">
+              <a href="" className="flex gap-5 pl-1">
                 <svg
                   width="24"
                   height="24"
@@ -314,9 +333,9 @@ const Home = () => {
                 <p className="text-[#FAFAFA] font-normal text-sm mt-[6px]">
                   My Reviews
                 </p>
-              </div>
+              </a>
 
-              <div className="flex gap-5 pl-1">
+              <a href="" className="flex gap-5 pl-1">
                 <svg
                   width="24"
                   height="24"
@@ -336,9 +355,9 @@ const Home = () => {
                 <p className="text-[#FAFAFA] font-normal text-sm mt-[6px]">
                   Logout
                 </p>
-              </div>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
       </section>
 
@@ -348,7 +367,7 @@ const Home = () => {
             <p className="text-sm font-medium">Women&apos;s Fashion</p>
             <div>
               <a href="">
-                <Image src={right_arrow} className="mt-1" />
+                <Image src={image.right_arrow} className="mt-1" />
               </a>
             </div>
           </div>
@@ -356,7 +375,7 @@ const Home = () => {
             <p className="text-sm font-medium">Men&apos;s Fashion</p>
             <div>
               <a href="">
-                <Image src={right_arrow} className="mt-1" />
+                <Image src={image.right_arrow} className="mt-1" />
               </a>
             </div>
           </div>
@@ -372,7 +391,7 @@ const Home = () => {
         <div className="flex bg-[#000000] pl-24 mt-10 pt-14">
           <div className="flex flex-col gap-6">
             <div className="flex gap-4">
-              <Image src={apple} />
+              <Image src={image.apple} />
               <p className="text-base font-medium mt-4 text-white">
                 Iphone 14 Series
               </p>
@@ -387,11 +406,11 @@ const Home = () => {
                 <a href="">Shop Now</a>
               </p>
               <div>
-                <Image src={arrow} className="mt-2" />
+                <Image src={image.arrow} className="mt-2" />
               </div>
             </div>
           </div>
-          <Image src={iphone} className="w-[60%]" />
+          <Image src={image.iphone} className="w-[60%]" />
         </div>
       </section>
 
@@ -440,8 +459,8 @@ const Home = () => {
         </div>
 
         <div className="flex gap-2">
-          <Image src={left} priority className="cursor-pointer" />
-          <Image src={right} priority className="cursor-pointer" />
+          <Image src={image.left} priority className="cursor-pointer" />
+          <Image src={image.right} priority className="cursor-pointer" />
         </div>
       </div>
 
@@ -453,14 +472,14 @@ const Home = () => {
                 -40%
               </p>
             </div>
-            <Image src={game} priority className="pt-6 -ml-8 w-[80%] mack" />
+            <Image src={image.game} priority className="pt-6 -ml-8 w-[80%] mack" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer" />
-              <Image src={eye} className="cursor-pointer" />
+              <Image src={image.heart} className="cursor-pointer" />
+              <Image src={image.eye} className="cursor-pointer" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[13rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[12.9rem] left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -477,7 +496,7 @@ const Home = () => {
             </div>
             <div className="flex gap-2">
               <div>
-                <Image src={five_star} />
+                <Image src={image.five_star} />
               </div>
               <p className="text-gray-400 font-semibold">(88)</p>
             </div>
@@ -491,14 +510,14 @@ const Home = () => {
                 -35%
               </p>
             </div>
-            <Image src={pad} className="pt-6 -ml-8 w-[80%] mack" />
+            <Image src={image.pad} className="pt-6 -ml-8 w-[80%] mack" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer" />
-              <Image src={eye} className="cursor-pointer" />
+              <Image src={image.heart} className="cursor-pointer" />
+              <Image src={image.eye} className="cursor-pointer" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[13rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[12.9rem] left-[1px] px-[92.6px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -515,7 +534,7 @@ const Home = () => {
             </div>
             <div className="flex gap-2">
               <div>
-                <Image src={four_star} />
+                <Image src={image.four_star} />
               </div>
               <p className="text-gray-400 font-semibold">(75)</p>
             </div>
@@ -529,14 +548,14 @@ const Home = () => {
                 -30%
               </p>
             </div>
-            <Image src={smartTv} className="pt-6 -ml-8 w-[80%] mack" />
+            <Image src={image.smartTv} className="pt-6 -ml-8 w-[80%] mack" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer" />
-              <Image src={eye} className="cursor-pointer" />
+              <Image src={image.heart} className="cursor-pointer" />
+              <Image src={image.eye} className="cursor-pointer" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[13rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[12.9rem] left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -553,7 +572,7 @@ const Home = () => {
             </div>
             <div className="flex gap-2">
               <div>
-                <Image src={five_star} />
+                <Image src={image.five_star} />
               </div>
               <p className="text-gray-400 font-semibold">(99)</p>
             </div>
@@ -567,14 +586,14 @@ const Home = () => {
                 -25%
               </p>
             </div>
-            <Image src={chair} className="pt-6 -ml-8 w-[80%] mack" />
+            <Image src={image.chair} className="pt-6 -ml-8 w-[80%] mack" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer" />
-              <Image src={eye} className="cursor-pointer" />
+              <Image src={image.heart} className="cursor-pointer" />
+              <Image src={image.eye} className="cursor-pointer" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[13rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[12.9rem] left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -591,7 +610,7 @@ const Home = () => {
             </div>
             <div className="flex gap-2">
               <div>
-                <Image src={five_star} />
+                <Image src={image.half_star} />
               </div>
               <p className="text-gray-400 font-semibold">(99)</p>
             </div>
@@ -614,8 +633,8 @@ const Home = () => {
           <p className="text-3xl font-semibold mt-3">Browse By Category</p>
 
           <div className="flex gap-2">
-            <Image src={left} priority className="cursor-pointer" />
-            <Image src={right} priority className="cursor-pointer" />
+            <Image src={image.left} priority className="cursor-pointer" />
+            <Image src={image.right} priority className="cursor-pointer" />
           </div>
         </div>
 
@@ -627,7 +646,7 @@ const Home = () => {
               changePhone();
             }}
           >
-            <Image src={phone} />
+            <Image src={image.phone} />
             <p className="font-medium">Phones</p>
           </div>
 
@@ -638,7 +657,7 @@ const Home = () => {
               changeComputer();
             }}
           >
-            <Image src={computer} />
+            <Image src={image.computer} />
             <p className="font-medium">Computers</p>
           </div>
 
@@ -649,7 +668,7 @@ const Home = () => {
               changeWatch();
             }}
           >
-            <Image src={smartwatch} />
+            <Image src={image.smartwatch} />
             <p className="font-medium">SmartWatch</p>
           </div>
 
@@ -660,7 +679,7 @@ const Home = () => {
               changeCamera();
             }}
           >
-            <Image src={camera} />
+            <Image src={image.camera} />
             <p className="font-medium">Camera</p>
           </div>
 
@@ -671,7 +690,7 @@ const Home = () => {
               changeHead();
             }}
           >
-            <Image src={headphone} />
+            <Image src={image.headphone} />
             <p className="font-medium">HeadPhones</p>
           </div>
 
@@ -682,7 +701,7 @@ const Home = () => {
               changeGaming();
             }}
           >
-            <Image src={gaming} />
+            <Image src={image.gaming} />
             <p className="font-medium">Gaming</p>
           </div>
         </div>
@@ -703,14 +722,14 @@ const Home = () => {
       <div className="mt-10 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={cloth} className="pt-6 w-[77%] mack ml-8" />
+            <Image src={image.cloth} className="pt-6 w-[77%] mack ml-8" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer" />
-              <Image src={eye} className="cursor-pointer" />
+              <Image src={image.heart} className="cursor-pointer" />
+              <Image src={image.eye} className="cursor-pointer" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -727,7 +746,7 @@ const Home = () => {
             </div>
             <div className="flex gap-2">
               <div>
-                <Image src={five_star} />
+                <Image src={image.five_star} />
               </div>
               <p className="text-gray-400 font-semibold">(65)</p>
             </div>
@@ -736,14 +755,14 @@ const Home = () => {
 
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={gucci} className="pt-6 w-[77%] mack ml-8" />
+            <Image src={image.gucci} className="pt-6 w-[77%] mack ml-8" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer" />
-              <Image src={eye} className="cursor-pointer" />
+              <Image src={image.heart} className="cursor-pointer" />
+              <Image src={image.eye} className="cursor-pointer" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[92.2px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -760,7 +779,7 @@ const Home = () => {
             </div>
             <div className="flex gap-2">
               <div>
-                <Image src={five_star} />
+                <Image src={image.half_star} />
               </div>
               <p className="text-gray-400 font-semibold">(65)</p>
             </div>
@@ -769,14 +788,14 @@ const Home = () => {
 
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={speak} className="pt-6 w-[77%] mack ml-8" />
+            <Image src={image.speak} className="pt-6 w-[77%] mack ml-8" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer" />
-              <Image src={eye} className="cursor-pointer" />
+              <Image src={image.heart} className="cursor-pointer" />
+              <Image src={image.eye} className="cursor-pointer" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -793,7 +812,7 @@ const Home = () => {
             </div>
             <div className="flex gap-2">
               <div>
-                <Image src={five_star} />
+                <Image src={image.half_star} />
               </div>
               <p className="text-gray-400 font-semibold">(65)</p>
             </div>
@@ -802,14 +821,14 @@ const Home = () => {
 
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={bookshelf} className="pt-6 w-[77%] mack ml-8" />
+            <Image src={image.bookshelf} className="pt-6 w-[77%] mack ml-8" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer" />
-              <Image src={eye} className="cursor-pointer" />
+              <Image src={image.heart} className="cursor-pointer" />
+              <Image src={image.eye} className="cursor-pointer" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -825,7 +844,7 @@ const Home = () => {
             </div>
             <div className="flex gap-2">
               <div>
-                <Image src={five_star} />
+                <Image src={image.five_star} />
               </div>
               <p className="text-gray-400 font-semibold">(65)</p>
             </div>
@@ -877,7 +896,7 @@ const Home = () => {
           </div>
         </div>
 
-        <Image src={jbl} className="w-[60%] jbl" />
+        <Image src={image.jbl} className="w-[60%] jbl" />
       </div>
 
       <div className="flex flex-col mx-32 gap-4">
@@ -889,8 +908,8 @@ const Home = () => {
           <p className="text-3xl font-semibold mt-3">Explore Our Products</p>
 
           <div className="flex gap-2">
-            <Image src={left} priority className="cursor-pointer" />
-            <Image src={right} priority className="cursor-pointer" />
+            <Image src={image.left} priority className="cursor-pointer" />
+            <Image src={image.right} priority className="cursor-pointer" />
           </div>
         </div>
       </div>
@@ -898,14 +917,14 @@ const Home = () => {
       <div className="mt-10 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={dog} className="pt-6 w-[74%] mb-5 mack ml-8" />
+            <Image src={image.dog} className="pt-6 w-[74%] mb-5 mack ml-8" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer w-5" />
-              <Image src={eye} className="cursor-pointer w-5" />
+              <Image src={image.heart} className="cursor-pointer w-5" />
+              <Image src={image.eye} className="cursor-pointer w-5" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -920,7 +939,7 @@ const Home = () => {
               <p className="font-semibold text-[#DB4444]">$100</p>
               <div className="flex gap-2">
                 <div>
-                  <Image src={five_star} className="mt-[2px]" />
+                  <Image src={image.three_star} className="mt-[2px]" />
                 </div>
                 <p className="text-gray-400 font-semibold">(35)</p>
               </div>
@@ -930,14 +949,14 @@ const Home = () => {
 
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={snap} className="pt-6 w-[74%] mb-5 mack ml-8" />
+            <Image src={image.snap} className="pt-6 w-[74%] mb-5 mack ml-8" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer w-5" />
-              <Image src={eye} className="cursor-pointer w-5" />
+              <Image src={image.heart} className="cursor-pointer w-5" />
+              <Image src={image.eye} className="cursor-pointer w-5" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[92.2px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -952,7 +971,7 @@ const Home = () => {
               <p className="font-semibold text-[#DB4444]">$360</p>
               <div className="flex gap-2">
                 <div>
-                  <Image src={five_star} className="mt-[2px]" />
+                  <Image src={image.four_star} className="mt-[2px]" />
                 </div>
                 <p className="text-gray-400 font-semibold">(95)</p>
               </div>
@@ -962,14 +981,14 @@ const Home = () => {
 
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={laptop} className="pt-6 w-[74%] mb-5 mack ml-8" />
+            <Image src={image.laptop} className="pt-6 w-[74%] mb-5 mack ml-8" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer w-5" />
-              <Image src={eye} className="cursor-pointer w-5" />
+              <Image src={image.heart} className="cursor-pointer w-5" />
+              <Image src={image.eye} className="cursor-pointer w-5" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -984,7 +1003,7 @@ const Home = () => {
               <p className="font-semibold text-[#DB4444]">$700</p>
               <div className="flex gap-2">
                 <div>
-                  <Image src={five_star} className="mt-[2px]" />
+                  <Image src={image.five_star} className="mt-[2px]" />
                 </div>
                 <p className="text-gray-400 font-semibold">(325)</p>
               </div>
@@ -994,14 +1013,14 @@ const Home = () => {
 
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={cream} className="pt-6 w-[76%] mb-5 mack ml-8" />
+            <Image src={image.cream} className="pt-6 w-[76%] mb-5 mack ml-8" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer w-5" />
-              <Image src={eye} className="cursor-pointer w-5" />
+              <Image src={image.heart} className="cursor-pointer w-5" />
+              <Image src={image.eye} className="cursor-pointer w-5" />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[13.3rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[13.3rem] left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -1016,7 +1035,7 @@ const Home = () => {
               <p className="font-semibold text-[#DB4444]">$500</p>
               <div className="flex gap-2">
                 <div>
-                  <Image src={five_star} className="mt-[2px]" />
+                  <Image src={image.four_star} className="mt-[2px]" />
                 </div>
                 <p className="text-gray-400 font-semibold">(145)</p>
               </div>
@@ -1029,15 +1048,15 @@ const Home = () => {
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
             <Image
-              src={benz}
+              src={image.benz}
               className="pt-6 w-[69%] mb-5 mack ml-8"
               id="benz"
             />
 
             <div className="flex flex-col gap-2 ml-4">
-              <Image src={heart} className="cursor-pointer w-5" />
+              <Image src={image.heart} className="cursor-pointer w-5" />
               <Image
-                src={eye}
+                src={image.eye}
                 className="cursor-pointer w-5"
                 onClick={() => {
                   let benz = document.getElementById("benz");
@@ -1046,7 +1065,7 @@ const Home = () => {
               />
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -1061,24 +1080,34 @@ const Home = () => {
               <p className="font-semibold text-[#DB4444]">$960</p>
               <div className="flex gap-2">
                 <div>
-                  <Image src={five_star} className="mt-[2px]" />
+                  <Image src={image.five_star} className="mt-[2px]" />
                 </div>
                 <p className="text-gray-400 font-semibold">(65)</p>
               </div>
             </div>
+            <div className="flex gap-2">
+            <svg id="svg" onClick={() => {
+               border();
+            }} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="10" fill="#FB1314"/>
+</svg>
+            <Image src={image.red} id="svo" onClick={() => {
+              shape();
+            }}/>
+          </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={shoe} className="pt-6 w-[74%] mb-5 mack ml-8" />
+            <Image src={image.shoe} className="pt-6 w-[74%] mb-5 mack ml-8" />
 
             <div className="flex flex-col gap-2 ml-1">
-              <Image src={heart} className="cursor-pointer w-5" />
-              <Image src={eye} className="cursor-pointer w-5" />
+              <Image src={image.heart} className="cursor-pointer w-5" />
+              <Image src={image.eye} className="cursor-pointer w-5" />
             </div>
             <button
-              className="absolute text-white font-medium abs bg-black top-[12.5rem] left-[1px] px-[89px] py-3 add"
+              className="absolute text-white font-medium abs bg-black top-[12.5rem] left-[1px] px-[92.2px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -1093,24 +1122,34 @@ const Home = () => {
               <p className="font-semibold text-[#DB4444]">$1160</p>
               <div className="flex gap-2">
                 <div>
-                  <Image src={five_star} className="mt-[2px]" />
+                  <Image src={image.five_star} className="mt-[2px]" />
                 </div>
                 <p className="text-gray-400 font-semibold">(35)</p>
               </div>
             </div>
+            <div className="flex gap-2">
+            <svg id="svgg" onClick={() => {
+               borderr();
+            }} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="10" fill="#EEFF61"/>
+</svg>
+            <Image src={image.red} id="svoo" onClick={() => {
+              shapee();
+            }}/>
+          </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={padd} className="pt-6 w-[90%] mb-5 mack ml-8" />
+            <Image src={image.padd} className="pt-6 w-[90%] mb-5 mack ml-8" />
 
             <div className="flex flex-col gap-2">
-              <Image src={heart} className="cursor-pointer" />
-              <Image src={eye} className="cursor-pointer" />
+              <Image src={image.heart} className="cursor-pointer" />
+              <Image src={image.eye} className="cursor-pointer" />
             </div>
             <button
-              className="absolute text-white font-medium abs bg-black top-[12.6rem] abs left-[1px] px-[89px] py-3 add"
+              className="absolute text-white font-medium abs bg-black top-[12.6rem] abs left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -1125,24 +1164,34 @@ const Home = () => {
               <p className="font-semibold text-[#DB4444]">$660</p>
               <div className="flex gap-2">
                 <div>
-                  <Image src={half_star} className="mt-[2px]" />
+                  <Image src={image.half_star} className="mt-[2px]" />
                 </div>
                 <p className="text-gray-400 font-semibold">(55)</p>
               </div>
             </div>
+            <div className="flex gap-2">
+            <svg id="svggg" onClick={() => {
+               borderrr();
+            }} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="10" fill="#222"/>
+</svg>
+            <Image src={image.red} id="svooo" onClick={() => {
+              shapeee();
+            }}/>
+          </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
           <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={jacket} className="pt-6 w-[67%] mb-5 mack ml-8" />
+            <Image src={image.jacket} className="pt-6 w-[67%] mb-5 mack ml-8" />
 
             <div className="flex flex-col gap-2 ml-6">
-              <Image src={heart} className="cursor-pointer w-5" />
-              <Image src={eye} className="cursor-pointer w-5" />
+              <Image src={image.heart} className="cursor-pointer w-5" />
+              <Image src={image.eye} className="cursor-pointer w-5" />
             </div>
             <button
-              className="absolute text-white font-medium bg-black top-[12.5rem] abs left-[1px] px-[89px] py-3 add"
+              className="absolute text-white font-medium bg-black top-[12.5rem] abs left-[1px] px-[92px] py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -1157,11 +1206,21 @@ const Home = () => {
               <p className="font-semibold text-[#DB4444]">$660</p>
               <div className="flex gap-2">
                 <div>
-                  <Image src={half_star} className="mt-[2px]" />
+                  <Image src={image.half_star} className="mt-[2px]" />
                 </div>
                 <p className="text-gray-400 font-semibold">(55)</p>
               </div>
             </div>
+            <div className="flex gap-2">
+            <svg id="svgggg" width="20" onClick={() => {
+              borderrrr();
+            }} height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="10" fill="#222"/>
+</svg>
+            <Image src={image.red} id="svoooo" onClick={() => {
+              shapeeee();
+            }}/>
+          </div>
           </div>
         </div>
       </div>
@@ -1181,99 +1240,101 @@ const Home = () => {
           <p className="text-3xl font-semibold mt-1">New Arrival</p>
 
           <div className="gap-2 hidden">
-            <Image src={left} priority className="cursor-pointer" />
-            <Image src={right} priority className="cursor-pointer" />
+            <Image src={image.left} priority className="cursor-pointer" />
+            <Image src={image.right} priority className="cursor-pointer" />
           </div>
         </div>
       </div>
 
       <div className="flex justify-between mx-32 mt-20 mb-20">
-      <div className="bg-[#0D0D0D] relative owe px-6 pt-20 rounded-md">
-        <div className="flex flex-col gap-3 shas z-[1]">
-          <p className="text-2xl font-semibold text-white">PlayStation 5</p>
-          <p className="text-sm font-medium text-white">
-            Black and White version of the PS5 <br /> coming out on sale.
-          </p>
-          <p
-            className="text-base font-medium text-white"
-          >
-            <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
-          </p>
+        <div className="bg-[#0D0D0D] relative owe px-6 pt-20 rounded-md">
+          <div className="flex flex-col gap-3 shas z-[1]">
+            <p className="text-2xl font-semibold text-white">PlayStation 5</p>
+            <p className="text-sm font-medium text-white">
+              Black and White version of the PS5 <br /> coming out on sale.
+            </p>
+            <p
+              className="text-base font-medium text-white"
+            >
+              <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
+            </p>
+          </div>
+          <Image src={image.ps5} className="pss" />
         </div>
-        <Image src={ps5} className="pss" />
-      </div>
 
-      <div className="flex flex-col gap-5">
-      <div className="bg-[#0D0D0D] relative pl-20 pr-1 dash rounded-md">
-      <Image src={woman} className="pss"/> 
-      <div className="flex flex-col gap-3 z-[1] index">
-          <p className="text-2xl font-semibold text-white">Women’s Collections</p>
-          <p className="text-sm font-medium text-white">
-          Featured woman collections that <br /> give you another vibe.
-          </p>
-          <p
-            className="text-base font-medium text-white"
-          >
-            <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
-          </p>
-        </div>
-        </div>
-        <div className="flex gap-6">
-        <div className="bg-[#0D0D0D] relative rounded-md way p-[25px] pt-[42px]">
-        <Image src={mp3} className="pss"/>
-        <div className="flex flex-col gap-2 z-[1] indexes">
-          <p className="text-2xl font-semibold text-white">Speakers</p>
-          <p className="text-sm font-medium text-white">
-          Amazon wireless speakers
-          </p>
-          <p
-            className="text-base font-medium text-white"
-          >
-            <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
-          </p>
-        </div>
-        </div>
-        <div className="bg-[#0D0D0D] relative way rounded-md p-[25px] pt-[42px]">
-        <Image src={perfume} className="pss"/>
-        <div className="flex flex-col gap-2 z-[1] indexes">
-          <p className="text-2xl font-semibold text-white">Perfume</p>
-          <p className="text-sm font-normal text-white">
-          GUCCI INTENSE OUD EDP
-          </p>
-          <p
-            className="text-base font-medium text-white"
-          >
-            <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
-          </p>
-        </div>
-        </div>
-        </div>
+        <div className="flex flex-col gap-5">
+          <div className="bg-[#0D0D0D] relative pl-20 pr-1 dash rounded-md">
+            <Image src={image.woman} className="pss" />
+            <div className="flex flex-col gap-3 z-[1] index">
+              <p className="text-2xl font-semibold text-white">Women’s Collections</p>
+              <p className="text-sm font-medium text-white">
+                Featured woman collections that <br /> give you another vibe.
+              </p>
+              <p
+                className="text-base font-medium text-white"
+              >
+                <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-6">
+            <div className="bg-[#0D0D0D] relative rounded-md way p-[25px] pt-[42px]">
+              <Image src={image.mp3} className="pss" />
+              <div className="flex flex-col gap-2 z-[1] indexes">
+                <p className="text-2xl font-semibold text-white">Speakers</p>
+                <p className="text-sm font-medium text-white">
+                  Amazon wireless speakers
+                </p>
+                <p
+                  className="text-base font-medium text-white"
+                >
+                  <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
+                </p>
+              </div>
+            </div>
+            <div className="bg-[#0D0D0D] relative way rounded-md p-[25px] pt-[42px]">
+              <Image src={image.perfume} className="pss" />
+              <div className="flex flex-col gap-2 z-[1] indexes">
+                <p className="text-2xl font-semibold text-white">Perfume</p>
+                <p className="text-sm font-normal text-white">
+                  GUCCI INTENSE OUD EDP
+                </p>
+                <p
+                  className="text-base font-medium text-white"
+                >
+                  <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="flex mx-60 justify-between my-10">
-      <div className="flex flex-col gap-2 items-center justify-center">
-      <Image src={free} className="mb-4"/>
-      <p className="text-xl font-semibold">FREE AND FAST DELIVERY</p>
-      <p className="text-sm font-medium">Free delivery for all orders over {rateForFreeDelivery}</p>
-      </div>
+        <div className="flex flex-col gap-2 items-center justify-center">
+          <Image src={image.free} className="mb-4" />
+          <p className="text-xl font-semibold">FREE AND FAST DELIVERY</p>
+          <p className="text-sm font-medium">Free delivery for all orders over {rateForFreeDelivery}</p>
+        </div>
 
-      <div className="flex flex-col gap-2 items-center justify-center">
-      <Image src={fast} className="mb-4"/>
-      <p className="text-xl font-semibold">24/7 CUSTOMER SERVICE</p>
-      <p className="text-sm font-medium">Friendly 24/7 customer support</p>
-      </div>
+        <div className="flex flex-col gap-2 items-center justify-center">
+          <Image src={image.fast} className="mb-4" />
+          <p className="text-xl font-semibold">24/7 CUSTOMER SERVICE</p>
+          <p className="text-sm font-medium">Friendly 24/7 customer support</p>
+        </div>
 
-      <div className="flex flex-col gap-2 items-center justify-center">
-      <Image src={verify} className="mb-4"/>
-      <p className="text-xl font-semibold">MONEY BACK GUARANTEE</p>
-      <p className="text-sm font-medium">We return money within {daysOfGuarantee} days</p>
-      </div>
+        <div className="flex flex-col gap-2 items-center justify-center">
+          <Image src={image.verify} className="mb-4" />
+          <p className="text-xl font-semibold">MONEY BACK GUARANTEE</p>
+          <p className="text-sm font-medium">We return money within {daysOfGuarantee} days</p>
+        </div>
       </div>
 
       <a href="#home" className="flex mx-20 items-end justify-end">
-      <Image src={top}/>
+        <Image src={image.top} />
       </a>
+
+      <Footer />
     </div>
   );
 };
