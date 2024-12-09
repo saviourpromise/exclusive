@@ -6,6 +6,11 @@ import Image from "next/image";
 import { image } from "../Components/Image";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import ProductTypes from "../Components/ProductTypes/ProductTypes";
+import SalesCountdown from "../Components/SalesCountdown/SalesCountdown";
+import Jbl from "../Components/Jbl/Jbl";
+import NewArrival from "../Components/NewArrival/NewArrival";
+import Qualifications from "../Components/Qualifications/Qualifications";
 
 const Home = () => {
   const rateForFreeDelivery = "$140";
@@ -21,111 +26,6 @@ const Home = () => {
   // }, [carts]);
 
   const notify = () => toast.success("ADDED!");
-
-  const shape = () => {
-    let svo = document.getElementById("svo");
-    svo.style.borderWidth = "2px";
-    svo.style.borderColor = "black";
-    svo.style.borderRadius = "9999px";
-    svo.style.padding = "2px";
-  }
-
-  const shapee = () => {
-    let svoo = document.getElementById("svoo");
-    svoo.style.borderWidth = "2px";
-    svoo.style.borderColor = "black";
-    svoo.style.borderRadius = "9999px";
-    svoo.style.padding = "2px";
-  }
-
-  const shapeee = () => {
-    let svooo = document.getElementById("svooo");
-    svooo.style.borderWidth = "2px";
-    svooo.style.borderColor = "black";
-    svooo.style.borderRadius = "9999px";
-    svooo.style.padding = "2px";
-  }
-
-  const shapeeee = () => {
-    let svoooo = document.getElementById("svoooo");
-    svoooo.style.borderWidth = "2px";
-    svoooo.style.borderColor = "black";
-    svoooo.style.borderRadius = "9999px";
-    svoooo.style.padding = "2px";
-  }
-
-  const border = () => {
-    let svg = document.getElementById("svg");
-    svg.style.borderWidth = "2px";
-    svg.style.borderColor = "black";
-    svg.style.borderRadius = "9999px";
-    svg.style.padding = "2px";
-  }
-
-  const borderr = () => {
-    let svgg = document.getElementById("svgg");
-    svgg.style.borderWidth = "2px";
-    svgg.style.borderColor = "black";
-    svgg.style.borderRadius = "9999px";
-    svgg.style.padding = "2px";
-  }
-
-  const borderrr = () => {
-    let svggg = document.getElementById("svggg");
-    svggg.style.borderWidth = "2px";
-    svggg.style.borderColor = "black";
-    svggg.style.borderRadius = "9999px";
-    svggg.style.padding = "2px";
-  }
-
-  const borderrrr = () => {
-    let svgggg = document.getElementById("svgggg");
-    svgggg.style.borderWidth = "2px";
-    svgggg.style.borderColor = "black";
-    svgggg.style.borderRadius = "9999px";
-    svgggg.style.padding = "2px";
-  }
-
-  const changePhone = () => {
-    let phone = document.getElementById("phone");
-    phone.style.color = "white";
-    phone.style.background = "#DB4444";
-    phone.style.border = "none";
-  };
-  const changeCamera = () => {
-    let camera = document.getElementById("camera");
-    camera.style.color = "white";
-    camera.style.background = "#DB4444";
-    camera.style.border = "none";
-  };
-
-  const changeComputer = () => {
-    let computer = document.getElementById("computer");
-    computer.style.color = "white";
-    computer.style.background = "#DB4444";
-    computer.style.border = "none";
-  };
-
-  const changeWatch = () => {
-    let watch = document.getElementById("watch");
-    watch.style.color = "white";
-    watch.style.background = "#DB4444";
-    watch.style.border = "none";
-  };
-
-  const changeHead = () => {
-    let head = document.getElementById("head");
-    head.style.color = "white";
-    head.style.background = "#DB4444";
-    head.style.border = "none";
-  };
-
-  const changeGaming = () => {
-    let gaming = document.getElementById("gaming");
-    gaming.style.color = "white";
-    gaming.style.background = "#DB4444";
-    gaming.style.border = "none";
-  };
 
   const addToCart = () => {
     setCarts(carts + 1);
@@ -157,13 +57,13 @@ const Home = () => {
   }, []);
   return (
     <div id="home">
-    <ToastContainer />
+      <ToastContainer />
       <Header />
 
-      <section className="flex px-32 justify-between pt-8 border-b-[1px] bg-white pb-3">
+      <section className="flex mx:flex-col mx:px-4 px-32 justify-between pt-8 border-b-[1px] bg-white pb-3">
         <p className="text-2xl font-bold">Exclusive</p>
 
-        <div className="flex gap-7 mt-1">
+        <div className="flex gap-7 mt-1 mx:hidden">
           <p className="text-base font-semibold custom-link text-[#6b6767]">
             <a href="">Home</a>
           </p>
@@ -363,125 +263,33 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="flex px-32 justify-between">
-        <div className="flex flex-col gap-6 pr-6 border-r-[1px]">
-          <div className="flex gap-14 pt-10">
-            <p className="text-sm font-medium">Women&apos;s Fashion</p>
-            <div>
-              <a href="">
-                <Image src={image.right_arrow} className="mt-1" />
-              </a>
-            </div>
-          </div>
-          <div className="flex gap-[4.9rem]">
-            <p className="text-sm font-medium">Men&apos;s Fashion</p>
-            <div>
-              <a href="">
-                <Image src={image.right_arrow} className="mt-1" />
-              </a>
-            </div>
-          </div>
-          <p className="text-sm font-medium">Electronics</p>
-          <p className="text-sm font-medium">Home & Lifestyle</p>
-          <p className="text-sm font-medium">Medicine</p>
-          <p className="text-sm font-medium">Sports & Outdoor</p>
-          <p className="text-sm font-medium">Baby&apos;s & Toys</p>
-          <p className="text-sm font-medium">Groceries & Pets</p>
-          <p className="text-sm font-medium">Health & Beauty</p>
-        </div>
-
-        <div className="flex bg-[#000000] pl-24 mt-10 pt-14">
-          <div className="flex flex-col gap-6">
-            <div className="flex gap-4">
-              <Image src={image.apple} />
-              <p className="text-base font-medium mt-4 text-white">
-                Iphone 14 Series
-              </p>
-            </div>
-
-            <p className="text-5xl leading-[55px] font-semibold text-white">
-              Up to 10% <br /> off Voucher
-            </p>
-
-            <div className="flex gap-4">
-              <p className="font-semibold border-b-2 border-b-gray-600 pb-[2px] text-white">
-                <a href="">Shop Now</a>
-              </p>
-              <div>
-                <Image src={image.arrow} className="mt-2" />
-              </div>
-            </div>
-          </div>
-          <Image src={image.iphone} className="w-[60%]" />
-        </div>
-      </section>
+      <ProductTypes />
 
       <p className="text-[#DB4444] rounded-md text-base font-semibold border-l-[12px] pl-3 ml-32 mt-20 py-1 mb-4 border-l-[#DB4444]">
         Today&apos;s
       </p>
 
-      <div className="flex px-32 justify-between">
-        <div className="flex gap-16">
-          <p className="text-3xl font-semibold mt-3">Flash Sales</p>
-          <div className="text-2xl flex gap-3">
-            <div className="flex flex-col justify-center items-center">
-              <p className="text-[10px] leading-4 font-bold">DAYS</p>
-              <span id="days" className="font-bold">
-                {time.days}
-              </span>
-            </div>
+      <SalesCountdown />
 
-            <span className="text-[#DB4444] mt-[14px]">:</span>
-
-            <div className="flex flex-col justify-center items-center">
-              <p className="text-[10px] leading-4 font-bold">HOURS</p>
-              <span id="hrs" className="font-bold">
-                {time.hours}
-              </span>
-            </div>
-
-            <span className="text-[#DB4444] mt-[14px]">:</span>
-
-            <div className="flex flex-col justify-center items-center">
-              <p className="text-[10px] leading-4 font-bold">MINUTES</p>
-              <span id="min" className="font-bold">
-                {time.minutes}
-              </span>
-            </div>
-
-            <span className="text-[#DB4444] mt-[14px]">:</span>
-
-            <div className="flex flex-col justify-center items-center">
-              <p className="text-[10px] leading-4 font-bold">SECONDS</p>
-              <span id="sec" className="font-bold">
-                {time.seconds}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex gap-2">
-          <Image src={image.left} priority className="cursor-pointer" />
-          <Image src={image.right} priority className="cursor-pointer" />
-        </div>
-      </div>
-
-      <div className="mt-10 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
+      <div className="mt-10 grid mx:px-4 mx:grid-cols-2 grid-cols-4 gap-4 mx-auto justify-center px-32">
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <div>
-              <p className="bg-[#DB4444] px-[10px] rounded-md pee font-light py-[4px] text-white">
-                -40%
-              </p>
-            </div>
-            <Image src={image.game} priority className="pt-6 -ml-8 w-[80%] mack" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <div>
+                <p className="bg-[#DB4444] px-[10px] rounded-md pee font-light py-[4px] text-white">
+                  -40%
+                </p>
+              </div>
+              <Image src={image.game} priority className="pt-6 -ml-8 w-[80%] mack" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer" />
-              <Image src={image.eye} className="cursor-pointer" />
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer" />
+                <Image src={image.eye} className="cursor-pointer" />
+              </div>
             </div>
+
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.9rem] left-[1px] px-[92px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -490,6 +298,7 @@ const Home = () => {
               Add to cart
             </button>
           </div>
+
           <div className="flex flex-col gap-2">
             <p className="font-bold">HAVIT HV-G92 Gamepad</p>
             <div className="flex gap-2">
@@ -506,20 +315,23 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <div>
-              <p className="bg-[#DB4444] px-[10px] rounded-md pee font-light py-[4px] text-white">
-                -35%
-              </p>
-            </div>
-            <Image src={image.pad} className="pt-6 -ml-8 w-[80%] mack" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <div>
+                <p className="bg-[#DB4444] px-[10px] rounded-md pee font-light py-[4px] text-white">
+                  -35%
+                </p>
+              </div>
+              <Image src={image.pad} className="pt-6 -ml-8 w-[80%] mack" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer" />
-              <Image src={image.eye} className="cursor-pointer" />
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer" />
+                <Image src={image.eye} className="cursor-pointer" />
+              </div>
             </div>
+
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.9rem] left-[1px] px-[92.6px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -528,6 +340,7 @@ const Home = () => {
               Add to cart
             </button>
           </div>
+
           <div className="flex flex-col gap-2">
             <p className="font-bold">AK-900 Wired Keyboard</p>
             <div className="flex gap-2">
@@ -544,20 +357,23 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <div>
-              <p className="bg-[#DB4444] px-[10px] rounded-md pee font-light py-[4px] text-white">
-                -30%
-              </p>
-            </div>
-            <Image src={image.smartTv} className="pt-6 -ml-8 w-[80%] mack" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <div>
+                <p className="bg-[#DB4444] px-[10px] rounded-md pee font-light py-[4px] text-white">
+                  -30%
+                </p>
+              </div>
+              <Image src={image.smartTv} className="pt-6 -ml-8 w-[80%] mack" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer" />
-              <Image src={image.eye} className="cursor-pointer" />
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer" />
+                <Image src={image.eye} className="cursor-pointer" />
+              </div>
             </div>
+
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.9rem] left-[1px] px-[92px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -566,6 +382,7 @@ const Home = () => {
               Add to cart
             </button>
           </div>
+
           <div className="flex flex-col gap-2">
             <p className="font-bold">IPS LCD Gaming Monitor</p>
             <div className="flex gap-2">
@@ -582,20 +399,22 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <div>
-              <p className="bg-[#DB4444] px-[10px] rounded-md pee font-light py-[4px] text-white">
-                -25%
-              </p>
-            </div>
-            <Image src={image.chair} className="pt-6 -ml-8 w-[80%] mack" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <div>
+                <p className="bg-[#DB4444] px-[10px] rounded-md pee font-light py-[4px] text-white">
+                  -25%
+                </p>
+              </div>
+              <Image src={image.chair} className="pt-6 -ml-8 w-[80%] mack" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer" />
-              <Image src={image.eye} className="cursor-pointer" />
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer" />
+                <Image src={image.eye} className="cursor-pointer" />
+              </div>
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.9rem] left-[1px] px-[92px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -626,7 +445,7 @@ const Home = () => {
         </button>
       </div>
 
-      <div className="flex flex-col gap-4 mb-20 pb-4 mx-32 border-t-[1px] border-b-[1px]">
+      <div className="flex mx:mx-4 flex-col gap-4 mb-20 pb-4 mx-32 border-t-[1px] border-b-[1px]">
         <p className="text-[#DB4444] rounded-md text-base font-semibold border-l-[12px] pl-3 mt-20 py-1 mb-4 border-l-[#DB4444]">
           Categories
         </p>
@@ -634,19 +453,15 @@ const Home = () => {
         <div className="flex justify-between -mt-6">
           <p className="text-3xl font-semibold mt-3">Browse By Category</p>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 mx:hidden">
             <Image src={image.left} priority className="cursor-pointer" />
             <Image src={image.right} priority className="cursor-pointer" />
           </div>
         </div>
 
-        <div className="flex justify-between py-10">
+        <div className="flex mx:grid mx:grid-cols-2 mx:gap-y-4 mx:gap-x-2 justify-between py-10">
           <div
             className="flex flex-col cursor-pointer gap-4 py-3 px-14 justify-center items-center border-[2px] rounded-md"
-            id="phone"
-            onClick={() => {
-              changePhone();
-            }}
           >
             <Image src={image.phone} />
             <p className="font-medium">Phones</p>
@@ -654,10 +469,6 @@ const Home = () => {
 
           <div
             className="flex flex-col cursor-pointer gap-4 py-3 justify-center items-center px-8 border-[2px] rounded-md"
-            id="computer"
-            onClick={() => {
-              changeComputer();
-            }}
           >
             <Image src={image.computer} />
             <p className="font-medium">Computers</p>
@@ -665,10 +476,6 @@ const Home = () => {
 
           <div
             className="flex flex-col cursor-pointer gap-4 py-3 justify-center items-center px-8 border-[2px] rounded-md"
-            id="watch"
-            onClick={() => {
-              changeWatch();
-            }}
           >
             <Image src={image.smartwatch} />
             <p className="font-medium">SmartWatch</p>
@@ -676,10 +483,6 @@ const Home = () => {
 
           <div
             className="flex flex-col cursor-pointer gap-4 py-3 justify-center items-center px-12 border-[2px] rounded-md"
-            id="camera"
-            onClick={() => {
-              changeCamera();
-            }}
           >
             <Image src={image.camera} />
             <p className="font-medium">Camera</p>
@@ -687,10 +490,6 @@ const Home = () => {
 
           <div
             className="flex flex-col cursor-pointer gap-4 py-3 justify-center items-center px-8 border-[2px] rounded-md"
-            id="head"
-            onClick={() => {
-              changeHead();
-            }}
           >
             <Image src={image.headphone} />
             <p className="font-medium">HeadPhones</p>
@@ -698,10 +497,6 @@ const Home = () => {
 
           <div
             className="flex flex-col cursor-pointer gap-4 py-3 justify-center items-center px-12 border-[2px] rounded-md"
-            id="gaming"
-            onClick={() => {
-              changeGaming();
-            }}
           >
             <Image src={image.gaming} />
             <p className="font-medium">Gaming</p>
@@ -709,29 +504,31 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex flex-col mx-32 justify-between">
+      <div className="flex mx:mx-4 flex-col mx-32 justify-between">
         <p className="text-[#DB4444] rounded-md text-base font-semibold border-l-[12px] pl-3 py-1 mb-4 border-l-[#DB4444]">
           This Month
         </p>
-        <div className="flex justify-between">
+        <div className="flex mx:flex-col justify-between">
           <p className="text-3xl font-semibold">Best Selling Products</p>
-          <button className="bg-[#DB4444] text-white py-[10px] px-10 text-sm rounded-[4px] text-center">
+          <button className="bg-[#DB4444] mx:hidden text-white py-[10px] px-10 text-sm rounded-[4px] text-center">
             View All
           </button>
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
+      <div className="mt-10 mx:px-4 mx:grid-cols-2 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.cloth} className="pt-6 w-[77%] mack ml-8" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.cloth} className="pt-6 w-[77%] mack ml-8" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer" />
-              <Image src={image.eye} className="cursor-pointer" />
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer" />
+                <Image src={image.eye} className="cursor-pointer" />
+              </div>
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[92px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -740,6 +537,7 @@ const Home = () => {
               Add to cart
             </button>
           </div>
+
           <div className="flex flex-col gap-2">
             <p className="font-bold">The north coat</p>
             <div className="flex gap-2">
@@ -756,15 +554,19 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.gucci} className="pt-6 w-[77%] mack ml-8" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer" />
-              <Image src={image.eye} className="cursor-pointer" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.gucci} className="pt-6 w-[77%] mack ml-8" />
+
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer" />
+                <Image src={image.eye} className="cursor-pointer" />
+              </div>
             </div>
+
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[92.2px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -773,6 +575,7 @@ const Home = () => {
               Add to cart
             </button>
           </div>
+
           <div className="flex flex-col gap-2">
             <p className="font-bold">Gucci duffle bag</p>
             <div className="flex gap-2">
@@ -789,15 +592,19 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.speak} className="pt-6 w-[77%] mack ml-8" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer" />
-              <Image src={image.eye} className="cursor-pointer" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.speak} className="pt-6 w-[77%] mack ml-8" />
+
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer" />
+                <Image src={image.eye} className="cursor-pointer" />
+              </div>
             </div>
+
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[92px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -806,6 +613,7 @@ const Home = () => {
               Add to cart
             </button>
           </div>
+
           <div className="flex flex-col gap-2">
             <p className="font-bold">RGB liquid CPU Cooler</p>
             <div className="flex gap-2">
@@ -822,15 +630,19 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.bookshelf} className="pt-6 w-[77%] mack ml-8" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer" />
-              <Image src={image.eye} className="cursor-pointer" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.bookshelf} className="pt-6 w-[77%] mack ml-8" />
+
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer" />
+                <Image src={image.eye} className="cursor-pointer" />
+              </div>
             </div>
+
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[92px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -839,6 +651,7 @@ const Home = () => {
               Add to cart
             </button>
           </div>
+
           <div className="flex flex-col gap-2">
             <p className="font-bold">Small BookSelf</p>
             <div className="flex gap-2">
@@ -854,54 +667,9 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex mt-20 mb-10 rounded mx-32 sea justify-between p-8 bg-black">
-        <div className="flex flex-col gap-10">
-          <p className="text-base font-semibold text-[#00FF66]">Categories</p>
-          <p className="text-5xl font-semibold leading-[3.4rem] text-white">
-            Enhance Your <br /> Music Experience
-          </p>
+      <Jbl />
 
-          <div className="flex gap-4">
-            <div className="flex flex-col-reverse justify-center items-center bg-white rounded-full w-12 h-12">
-              <p className="text-[10px] leading-4 font-bold">DAYS</p>
-              <span id="days" className="font-bold">
-                {time.days}
-              </span>
-            </div>
-
-            <div className="flex flex-col-reverse justify-center items-center bg-white rounded-full w-14 h-14">
-              <p className="text-[10px] leading-4 font-bold">HOURS</p>
-              <span id="hrs" className="font-bold">
-                {time.hours}
-              </span>
-            </div>
-
-            <div className="flex flex-col-reverse justify-center items-center bg-white rounded-full w-[3.7rem] h-[3.7rem]">
-              <p className="text-[10px] leading-4 font-bold">MINUTES</p>
-              <span id="hrs" className="font-bold">
-                {time.minutes}
-              </span>
-            </div>
-
-            <div className="flex flex-col-reverse justify-center items-center bg-white rounded-full w-[4rem] h-[4rem]">
-              <p className="text-[10px] leading-4 font-bold">SECONDS</p>
-              <span id="hrs" className="font-bold">
-                {time.seconds}
-              </span>
-            </div>
-          </div>
-
-          <div>
-            <button className="bg-[#00FF66] text-[#FAFAFA] px-8 py-2 font-medium rounded-md text-base">
-              BUY NOW!
-            </button>
-          </div>
-        </div>
-
-        <Image src={image.jbl} className="w-[60%] jbl" />
-      </div>
-
-      <div className="flex flex-col mx-32 gap-4">
+      <div className="flex mx:mx-4 flex-col mx-32 gap-4">
         <p className="text-[#DB4444] rounded-md text-base font-semibold border-l-[12px] pl-3 mt-20 py-1 mb-4 border-l-[#DB4444]">
           Our Products
         </p>
@@ -909,24 +677,26 @@ const Home = () => {
         <div className="flex justify-between -mt-6">
           <p className="text-3xl font-semibold mt-3">Explore Our Products</p>
 
-          <div className="flex gap-2">
+          <div className="flex mx:hidden gap-2">
             <Image src={image.left} priority className="cursor-pointer" />
             <Image src={image.right} priority className="cursor-pointer" />
           </div>
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
+      <div className="mt-10 mx:px-4 mx:grid-cols-2 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.dog} className="pt-6 w-[74%] mb-5 mack ml-8" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.dog} className="pt-6 w-[74%] mb-5 mack ml-8" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer w-5" />
-              <Image src={image.eye} className="cursor-pointer w-5" />
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer w-5" />
+                <Image src={image.eye} className="cursor-pointer w-5" />
+              </div>
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[92px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -936,7 +706,7 @@ const Home = () => {
             </button>
           </div>
           <div className="flex flex-col gap-2">
-            <p className="font-bold">Breed Dry Dog Food</p>
+            <p className="font-bold">Breed Dry Dog Food Sachet</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$100</p>
               <div className="flex gap-2">
@@ -950,15 +720,18 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.snap} className="pt-6 w-[74%] mb-5 mack ml-8" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.snap} className="pt-6 w-[74%] mb-5 mack ml-8" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer w-5" />
-              <Image src={image.eye} className="cursor-pointer w-5" />
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer w-5" />
+                <Image src={image.eye} className="cursor-pointer w-5" />
+              </div>
+
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[92.2px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -982,15 +755,19 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.laptop} className="pt-6 w-[74%] mb-5 mack ml-8" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.laptop} className="pt-6 w-[74%] mb-5 mack ml-8" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer w-5" />
-              <Image src={image.eye} className="cursor-pointer w-5" />
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer w-5" />
+                <Image src={image.eye} className="cursor-pointer w-5" />
+              </div>
+
             </div>
+
             <button
-              className="absolute text-white abs font-medium bg-black top-[13.2rem] left-[1px] px-[92px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -999,6 +776,7 @@ const Home = () => {
               Add to cart
             </button>
           </div>
+
           <div className="flex flex-col gap-2">
             <p className="font-bold">ASUS FHD Gaming Laptop</p>
             <div className="flex gap-2">
@@ -1014,15 +792,18 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.cream} className="pt-6 w-[76%] mb-5 mack ml-8" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.cream} className="pt-6 w-[76%] mb-5 mack ml-8" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer w-5" />
-              <Image src={image.eye} className="cursor-pointer w-5" />
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer w-5" />
+                <Image src={image.eye} className="cursor-pointer w-5" />
+              </div>
             </div>
+
             <button
-              className="absolute text-white abs font-medium bg-black top-[13.3rem] left-[1px] px-[92px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -1031,6 +812,7 @@ const Home = () => {
               Add to cart
             </button>
           </div>
+
           <div className="flex flex-col gap-2">
             <p className="font-bold">Curology Product Set</p>
             <div className="flex gap-2">
@@ -1046,28 +828,27 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
+      <div className="mt-10 mx:px-4 mx:grid-cols-2 grid grid-cols-4 gap-4 mx-auto justify-center px-32">
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image
-              src={image.benz}
-              className="pt-6 w-[69%] mb-5 mack ml-8"
-              id="benz"
-            />
 
-            <div className="flex flex-col gap-2 ml-4">
-              <Image src={image.heart} className="cursor-pointer w-5" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
               <Image
-                src={image.eye}
-                className="cursor-pointer w-5"
-                onClick={() => {
-                  let benz = document.getElementById("benz");
-                  benz.style.visibility = "hidden";
-                }}
+                src={image.benz}
+                className="pt-6 w-[69%] mb-5 mack ml-8"
+                id="benz"
               />
+
+              <div className="flex flex-col gap-2 ml-4">
+                <Image src={image.heart} className="cursor-pointer w-5" />
+                <Image
+                  src={image.eye}
+                  className="cursor-pointer w-5"
+                />
+              </div>
             </div>
             <button
-              className="absolute text-white abs font-medium bg-black top-[12.5rem] left-[1px] px-[92px] py-3 add"
+              className="text-white abs font-medium bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -1077,7 +858,7 @@ const Home = () => {
             </button>
           </div>
           <div className="flex flex-col gap-2">
-            <p className="font-bold">Kids Electric Car</p>
+            <p className="font-bold">Kids Electric Car (Under 15 years)</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$960</p>
               <div className="flex gap-2">
@@ -1088,28 +869,29 @@ const Home = () => {
               </div>
             </div>
             <div className="flex gap-2">
-            <svg id="svg" onClick={() => {
-               border();
-            }} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="10" cy="10" r="10" fill="#FB1314"/>
-</svg>
-            <Image src={image.red} id="svo" onClick={() => {
-              shape();
-            }}/>
-          </div>
+              <svg id="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="10" fill="#FB1314" />
+              </svg>
+              <Image src={image.red} id="svo" />
+            </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.shoe} className="pt-6 w-[74%] mb-5 mack ml-8" />
 
-            <div className="flex flex-col gap-2 ml-1">
-              <Image src={image.heart} className="cursor-pointer w-5" />
-              <Image src={image.eye} className="cursor-pointer w-5" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.shoe} className="pt-6 w-[74%] mb-5 mack ml-8" />
+
+              <div className="flex flex-col gap-2 ml-1">
+                <Image src={image.heart} className="cursor-pointer w-5" />
+                <Image src={image.eye} className="cursor-pointer w-5" />
+              </div>
+
             </div>
+
             <button
-              className="absolute text-white font-medium abs bg-black top-[12.5rem] left-[1px] px-[92.2px] py-3 add"
+              className="text-white font-medium abs bg-black py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -1130,28 +912,27 @@ const Home = () => {
               </div>
             </div>
             <div className="flex gap-2">
-            <svg id="svgg" onClick={() => {
-               borderr();
-            }} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="10" cy="10" r="10" fill="#EEFF61"/>
-</svg>
-            <Image src={image.red} id="svoo" onClick={() => {
-              shapee();
-            }}/>
-          </div>
+              <svg id="svgg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="10" fill="#EEFF61" />
+              </svg>
+              <Image src={image.red} id="svoo" />
+            </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.padd} className="pt-6 w-[90%] mb-5 mack ml-8" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.padd} className="pt-6 w-[90%] mb-5 mack ml-8 mx:ml-3" />
 
-            <div className="flex flex-col gap-2">
-              <Image src={image.heart} className="cursor-pointer" />
-              <Image src={image.eye} className="cursor-pointer" />
+              <div className="flex flex-col gap-2">
+                <Image src={image.heart} className="cursor-pointer" />
+                <Image src={image.eye} className="cursor-pointer" />
+              </div>
+
             </div>
             <button
-              className="absolute text-white font-medium abs bg-black top-[12.6rem] abs left-[1px] px-[92px] py-3 add"
+              className="text-white font-medium bg-black abs py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -1172,28 +953,28 @@ const Home = () => {
               </div>
             </div>
             <div className="flex gap-2">
-            <svg id="svggg" onClick={() => {
-               borderrr();
-            }} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="10" cy="10" r="10" fill="#222"/>
-</svg>
-            <Image src={image.red} id="svooo" onClick={() => {
-              shapeee();
-            }}/>
-          </div>
+              <svg id="svggg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="10" fill="#222" />
+              </svg>
+              <Image src={image.red} id="svooo" />
+            </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
-            <Image src={image.jacket} className="pt-6 w-[67%] mb-5 mack ml-8" />
 
-            <div className="flex flex-col gap-2 ml-6">
-              <Image src={image.heart} className="cursor-pointer w-5" />
-              <Image src={image.eye} className="cursor-pointer w-5" />
+          <div className="flex flex-col">
+            <div className="flex sam relative bg-[#F5F5F5] px-4 pt-4 pb-10 rounded-md">
+              <Image src={image.jacket} className="pt-6 w-[67%] mb-5 mx:mb-9 mack ml-8" />
+
+              <div className="flex flex-col gap-2 ml-6">
+                <Image src={image.heart} className="cursor-pointer w-5" />
+                <Image src={image.eye} className="cursor-pointer w-5" />
+              </div>
+
             </div>
             <button
-              className="absolute text-white font-medium bg-black top-[12.5rem] abs left-[1px] px-[92px] py-3 add"
+              className="text-white font-medium bg-black abs py-3 add"
               onClick={() => {
                 addToCart();
               }}
@@ -1202,8 +983,9 @@ const Home = () => {
               Add to cart
             </button>
           </div>
+
           <div className="flex flex-col gap-2">
-            <p className="font-bold">Quilted Satin Jacket</p>
+            <p className="font-bold">Stock Quilted Satin Jacket</p>
             <div className="flex gap-2">
               <p className="font-semibold text-[#DB4444]">$660</p>
               <div className="flex gap-2">
@@ -1214,15 +996,11 @@ const Home = () => {
               </div>
             </div>
             <div className="flex gap-2">
-            <svg id="svgggg" width="20" onClick={() => {
-              borderrrr();
-            }} height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="10" cy="10" r="10" fill="#222"/>
-</svg>
-            <Image src={image.red} id="svoooo" onClick={() => {
-              shapeeee();
-            }}/>
-          </div>
+              <svg id="svgggg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="10" fill="#222" />
+              </svg>
+              <Image src={image.red} id="svoooo" />
+            </div>
           </div>
         </div>
       </div>
@@ -1233,7 +1011,7 @@ const Home = () => {
         </button>
       </div>
 
-      <div className="flex flex-col mx-32 gap-4">
+      <div className="flex mx:mx-4 flex-col mx-32 gap-4">
         <p className="text-[#DB4444] rounded-md text-base font-semibold border-l-[12px] pl-3 mt-20 py-1 mb-4 border-l-[#DB4444]">
           Featured
         </p>
@@ -1248,93 +1026,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex justify-between mx-32 mt-20 mb-20">
-        <div className="bg-[#0D0D0D] relative owe px-6 pt-20 rounded-md">
-          <div className="flex flex-col gap-3 shas z-[1]">
-            <p className="text-2xl font-semibold text-white">PlayStation 5</p>
-            <p className="text-sm font-medium text-white">
-              Black and White version of the PS5 <br /> coming out on sale.
-            </p>
-            <p
-              className="text-base font-medium text-white"
-            >
-              <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
-            </p>
-          </div>
-          <Image src={image.ps5} className="pss" />
-        </div>
+      <NewArrival />
 
-        <div className="flex flex-col gap-5">
-          <div className="bg-[#0D0D0D] relative pl-20 pr-1 dash rounded-md">
-            <Image src={image.woman} className="pss" />
-            <div className="flex flex-col gap-3 z-[1] index">
-              <p className="text-2xl font-semibold text-white">Women’s Collections</p>
-              <p className="text-sm font-medium text-white">
-                Featured woman collections that <br /> give you another vibe.
-              </p>
-              <p
-                className="text-base font-medium text-white"
-              >
-                <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-6">
-            <div className="bg-[#0D0D0D] relative rounded-md way p-[25px] pt-[42px]">
-              <Image src={image.mp3} className="pss" />
-              <div className="flex flex-col gap-2 z-[1] indexes">
-                <p className="text-2xl font-semibold text-white">Speakers</p>
-                <p className="text-sm font-medium text-white">
-                  Amazon wireless speakers
-                </p>
-                <p
-                  className="text-base font-medium text-white"
-                >
-                  <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
-                </p>
-              </div>
-            </div>
-            <div className="bg-[#0D0D0D] relative way rounded-md p-[25px] pt-[42px]">
-              <Image src={image.perfume} className="pss" />
-              <div className="flex flex-col gap-2 z-[1] indexes">
-                <p className="text-2xl font-semibold text-white">Perfume</p>
-                <p className="text-sm font-normal text-white">
-                  GUCCI INTENSE OUD EDP
-                </p>
-                <p
-                  className="text-base font-medium text-white"
-                >
-                  <a href="" className="border-b-[1px] border-b-gray-600 pb-[2px]">Shop Now</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Qualifications />
 
-      <div className="flex mx-60 justify-between my-10">
-        <div className="flex flex-col gap-2 items-center justify-center">
-          <Image src={image.free} className="mb-4" />
-          <p className="text-xl font-semibold">FREE AND FAST DELIVERY</p>
-          <p className="text-sm font-medium">Free delivery for all orders over {rateForFreeDelivery}</p>
-        </div>
-
-        <div className="flex flex-col gap-2 items-center justify-center">
-          <Image src={image.fast} className="mb-4" />
-          <p className="text-xl font-semibold">24/7 CUSTOMER SERVICE</p>
-          <p className="text-sm font-medium">Friendly 24/7 customer support</p>
-        </div>
-
-        <div className="flex flex-col gap-2 items-center justify-center">
-          <Image src={image.verify} className="mb-4" />
-          <p className="text-xl font-semibold">MONEY BACK GUARANTEE</p>
-          <p className="text-sm font-medium">We return money within {daysOfGuarantee} days</p>
-        </div>
-      </div>
-
-      <a href="#home" className="flex mx-20 items-end justify-end">
+      <div className="flex mx-20 items-end justify-end">
+      <a href="#home">
         <Image src={image.top} />
       </a>
+      </div>
 
       <Footer />
     </div>
@@ -1342,4 +1042,3 @@ const Home = () => {
 };
 
 export default Home;
- 

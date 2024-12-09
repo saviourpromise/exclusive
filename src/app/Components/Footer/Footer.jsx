@@ -5,7 +5,7 @@ import { image } from "../Image";
 const Footer = () => {
     return (
         <footer className="bg-[#000000] mt-10">
-            <div className="flex gap-4 px-32 py-16 justify-between">
+            <div className="flex mx:px-4 mx:flex-col mx:gap-20 gap-4 px-32 py-16 justify-between">
                 <div className="flex flex-col gap-4">
                     <p className="text-2xl font-bold text-white">Exclusive</p>
                     <p className="text-xl font-medium text-white">Subscribe</p>

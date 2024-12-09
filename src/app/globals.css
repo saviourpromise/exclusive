@@ -30,6 +30,7 @@ html{
 
 body{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: 1px solid red;
 }
 
 .mac:hover{
@@ -94,7 +95,7 @@ body{
   transition: 0.5s ease-in-out;
 }
 
-.abs{
+.abs{ 
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
 }
@@ -129,12 +130,6 @@ body{
   background-image: url(./Images/blurBg.svg);
   background-repeat: no-repeat;
   background-position: right;
-}
-
-.add{
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s ease-in-out;
 }
 
 .sam:hover .add{
